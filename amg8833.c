@@ -76,7 +76,7 @@ static int read_temperature(struct i2c_client *client, u8 *buf)
     return 0;
 }
 
-static ssize_t amg8833_i2c_open(struct inode *inode, struct file *filp)
+static int amg8833_i2c_open(struct inode *inode, struct file *filp)
 {
     struct amg8833_i2c_cdev *amg8833 = container_of(inode->i_cdev, struct amg8833_i2c_cdev, cdev);
 
